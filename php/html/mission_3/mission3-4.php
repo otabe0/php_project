@@ -83,7 +83,7 @@
       // テキストファイルの中身を削除 ファイルサイズを0にしてファイルポインタを先頭に移動する
       $fp = fopen($filepath, 'w');
       fclose($fp);
-      // 配列ごとの処理
+      // 行ごとの処理
       foreach ($contents as $line) {
         $record = explode("<>", $line);
         if($_POST["delete_id"] != $record[0])
