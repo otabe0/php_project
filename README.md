@@ -15,3 +15,8 @@ docker-compose version 1.23.2
 ```
 docker-compose up -d
 ```
+- html, phpファイルの配置場所  
+php/html 配下
+
+- ブラウザでfile_name.phpを指定して以下にアクセス
+http://localhost:80/[file_name]
