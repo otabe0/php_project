@@ -8,8 +8,9 @@ docker-compose version 1.23.2
 
 ## Usage
 - dockerのインストール
-    - windows(home)ならdocker toolboxをインストール
-    - MAC OS XならDocker Desktop for Mac
+    - windows(home): [docker toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
+    - windows(pro): [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+    - MAC OS X: [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 - 実行
     - php_project ディレクトリに移動
 ```
