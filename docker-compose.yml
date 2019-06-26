@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+    php:
+        container_name: php
+        build: .
+        ports:
+            - "80:80"
+        tty: true
+        volumes:
+            - ./php/html:/var/www/html
+            - ./php/conf/php.ini:/usr/local/etc/php/php.ini
+        links:
+            - db
+        depends_on:
+            - db
+
+    db:
+        container_name: mysql_server
+        image: mysql:8
+        environment:
+          MYSQL_ROOT_PASSWORD: passwd
+          #MYSQL_ROOT_USER: root
+          #TZ: 'Asiz/Tokyo'
+          #MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+        ports:
+          - "3306:3306"
+        volumes:
+          # パスワード方式の設定
+          - ./db/mysql_confd/:/etc/mysql/conf.d
+          # 初期データを投入するSQLが格納されているdir
+          - ./db/db_mysql/mysql_init:/docker-entrypoint-initdb.d
+          # 永続化する時にマウントするdir
+          - ./db/db_mysql/mysql_data:/var/lib/mysql
