@@ -1,6 +1,6 @@
 # php_project
 ## Description
-php + mysqlの環境構築
+php + mysqlの開発環境
 
 # Requirements
 Docker version 18.09.2
